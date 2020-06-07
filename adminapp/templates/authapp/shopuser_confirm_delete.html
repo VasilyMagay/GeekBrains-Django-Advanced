@@ -1,0 +1,33 @@
+{% extends 'adminapp/base.html' %}
+{% load staticfiles %}
+
+
+{% block container %}
+    <div class="user_delete">
+        {% if undelete %}
+            Хотите восстановить пользователя <b>{{ object.username }} {% if object.first_name %}
+                        ({{ object.first_name|title }}</b>
+                        {% if object.last_name %}
+                            {{ object.last_name|title }}
+                        {% endif %})
+                    {% endif %}?
+            <form method="post">
+                {% csrf_token %}
+                <input class="btn btn-success" type="submit" value="восстановить">
+            </form>
+            <a href="{% url 'admin:index' %}" class="btn btn-danger">отмена</a>
+        {% else %}
+            Уверены, что хотите удалить <b>{{ object.username }} {% if object.first_name %}
+                        ({{ object.first_name|title }}</b>
+                        {% if object.last_name %}
+                            {{ object.last_name|title }}
+                        {% endif %})
+                    {% endif %}?
+            <form method="post">
+                {% csrf_token %}
+                <input class="btn btn-danger" type="submit" value="удалить">
+            </form>
+            <a href="{% url 'admin:index' %}" class="btn btn-success">отмена</a>
+        {% endif %}
+    </div>
+{% endblock %}

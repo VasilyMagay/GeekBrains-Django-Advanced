@@ -1,0 +1,15 @@
+{% extends 'mainapp/base.html' %}
+{% load static %}
+{% load cache %}
+
+{% block container %}
+    <div class="container">
+       <div class="hero-white">
+            {% include 'mainapp/inc/inc__main_menu.html' %}
+       </div>
+       <div class="details">
+            {% include 'mainapp/inc/inc__products_list_content.html' %}
+       </div>
+       <div class="clr"></div>
+    </div>
+{% endblock %}

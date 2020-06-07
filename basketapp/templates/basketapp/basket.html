@@ -1,0 +1,10 @@
+{% extends 'basketapp/base.html' %}
+{% load static %}
+
+{% block container %}
+<div class="basket_container">
+    <div class="basket_list">
+        {% include 'basketapp/inc/inc__basket_list.html' %}
+    </div>
+</div>
+{% endblock %}

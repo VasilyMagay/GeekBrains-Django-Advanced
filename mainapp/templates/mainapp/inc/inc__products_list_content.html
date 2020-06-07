@@ -1,0 +1,40 @@
+{% load static %}
+{% load cache %}
+
+{% include 'mainapp/inc/inc__product_menu.html' %}
+
+<div class="products_list">
+    <div class="title clearfix">
+        <h2>Категория: "
+            {% if request.resolver_match.url_name == 'catalog' and request.resolver_match.args.0 == '0' %}
+                Все
+            {% else %}
+                {{ products.0.category.name|title }}
+            {% endif %}"
+        </h2>
+        <div class="paginator">
+            {% if products.has_previous %}
+                <a href="{% url 'main:catalog' category_pk products.previous_page_number %}"><</a>
+            {% endif %}
+            <span class="current">
+            страница {{ products.number }} из {{ products.paginator.num_pages }}
+            </span>
+            {% if products.has_next %}
+                <a href="{% url 'main:catalog' category_pk products.next_page_number %}">></a>
+            {% endif %}
+        </div>
+    </div>
+    <div class="category-products clearfix">
+        {% for product in products %}
+        <div class="block">
+            <a href="{% url 'main:product' product.pk %}"><img src="/media/{{ product.image|default:'products_images/default.jpg' }}" alt="">
+                <div class="text">
+                    <img src="{% static 'img/icon-hover.png' %}" alt="img">
+                    <h4>{{ product.name }}</h4>
+                    <p>{{ product.description }}</p>
+                </div>
+            </a>
+        </div>
+        {% endfor %}
+    </div>
+</div>

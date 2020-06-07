@@ -1,0 +1,135 @@
+{% extends 'mainapp/base.html' %}
+{% load static %}
+{% load cache %}
+
+{% block container %}
+            <div class="container">
+                <header class="slider padding-site">
+                    {% include 'mainapp/inc/inc__main_menu.html' %}
+                    <div class="header-text">
+                        <h3 class="slider-h3">TRENDING</h3>
+                        <h2 class="slider-h2">Fishnet Chair</h2>
+                        <p class="slider-text">Seat and back with upholstery made of&nbsp;cold cure foam. Steel frame, available in&nbsp;matt powder-coated black</p>
+                        <a href="#" class="button">Order&nbsp;Us</a>
+                    </div>
+                    <div class="pagination">
+                        <a href="#" class="circle"></a>
+                        <a href="#" class="circle circle-active"></a>
+                        <a href="#" class="circle"></a>
+                    </div>
+                </header>
+                <main>
+                    <section class="featured padding-site">
+                       <div class="hidden"><h2>Products</h2></div>
+                       <div class="ft-header">
+                            <ul class="ft-menu">
+                                <li class="ft-menu-list"><a href="#" class="ft-menu-link ft-menu-link-active">Featured</a></li>
+                                <li class="ft-menu-list"><a href="#" class="ft-menu-link">New</a></li>
+                            </ul>
+                            <a href="#" class="explore-link">explore all &gt;</a>
+                       </div>
+                       <div class="ft-pics">
+                           <article class="ft-box">
+                               <img src="{% static 'img/product-2.jpg' %}" alt="product 1" class="ft-img">
+                               <div class="ft-img-text">
+                                   <a href="#" class="ft-button">&gt;</a>
+                                   <h2 class="ft-h2">Fishnet Chair</h2>
+                                   <p class="ft-p">Seat and back with upholstery made of&nbsp;cold cure foam</p>
+                               </div>
+                           </article>
+                           <article class="ft-box">
+                               <img src="{% static 'img/product-2.jpg' %}" alt="product 2" class="ft-img">
+                               <div class="ft-img-text">
+                                   <a href="#" class="ft-button">&gt;</a>
+                                   <h2 class="ft-h2">Fishnet Chair</h2>
+                                   <p class="ft-p">Seat and back with upholstery made of&nbsp;cold cure foam</p>
+                               </div>
+                           </article>
+                           <article class="ft-box">
+                               <img src="{% static 'img/product-3.jpg' %}" alt="product 3" class="ft-img">
+                               <div class="ft-img-text">
+                                   <a href="#" class="ft-button">&gt;</a>
+                                   <h2 class="ft-h2">Fishnet Chair</h2>
+                                   <p class="ft-p">Seat and back with upholstery made of&nbsp;cold cure foam</p>
+                               </div>
+                           </article>                          
+                           <article class="ft-box">
+                               <img src="{% static 'img/product-4.jpg' %}" alt="product 4" class="ft-img">
+                               <div class="ft-img-text">
+                                   <a href="#" class="ft-button">&gt;</a>
+                                   <h2 class="ft-h2">Fishnet Chair</h2>
+                                   <p class="ft-p">Seat and back with upholstery made of&nbsp;cold cure foam</p>
+                               </div>
+                           </article>               
+                        </div>
+                    </section>
+                    <section class="promo-imgs">
+                        <div class="hidden">
+                            <h2>Promo images</h2>
+                        </div>
+                        <article class="promo-img pr-img1">
+                            <h2 class="pr-h2">exclusive</h2>
+                            <h3 class="pr-h3">Fishnet Chair</h3>
+                            <p class="pr-text">Seat and back with upholstery made of&nbsp;cold cure foam. Steel frame, available in&nbsp;matt</p>
+                            <a href="#" class="button">Order&nbsp;Us</a>
+                        </article>
+                        <article class="promo-img pr-img2">
+                            <h2 class="pr-h2">exclusive</h2>
+                            <h3 class="pr-h3">Fishnet Chair</h3>
+                            <p class="pr-text">Seat and back with upholstery made of&nbsp;cold cure foam. Steel frame, available in&nbsp;matt</p>
+                            <a href="#" class="button">Order&nbsp;Us</a>
+                        </article>
+                    </section>
+                    <section class="trending padding-site">
+                       <div class="tr-header">
+                            <h2 class="tr-text">Trending Products</h2>
+                            <a href="#" class="explore-link">explore all &gt;</a>
+                       </div>
+                       <div class="tr-pics">
+                           <a href="#" class="tr-img-link"><img src="{% static 'img/product-11.jpg' %}" alt="Product" class="tr-img"></a>
+                           <a href="#" class="tr-img-link"><img src="{% static 'img/product-12.jpg' %}" alt="Product" class="tr-img"></a>
+                           <a href="#" class="tr-img-link"><img src="{% static 'img/product-13.jpg' %}" alt="Product" class="tr-img"></a>
+                           <a href="#" class="tr-img-link"><img src="{% static 'img/product-14.jpg' %}" alt="Product" class="tr-img"></a>
+                           <a href="#" class="tr-img-link"><img src="{% static 'img/product-15.jpg' %}" alt="Product" class="tr-img"></a>
+                           <a href="#" class="tr-img-link"><img src="{% static 'img/product-16.jpg' %}" alt="Product" class="tr-img"></a>
+                       </div>
+                    </section>
+                    <section class="slider2 padding-site">
+                        <div class="header-text">
+                            <h3 class="slider2-h3">Hot deal</h3>
+                            <h2 class="slider-h2">Fishnet Chair</h2>
+                            <p class="slider-text">Seat and back with upholstery made of&nbsp;cold cure foam. Steel frame, available in&nbsp;matt powder-coated black</p>
+                            <a href="#" class="button">Order&nbsp;Us</a>
+                        </div>
+                        <div class="pagination">
+                            <a href="#" class="circle"></a>
+                            <a href="#" class="circle circle-active"></a>
+                            <a href="#" class="circle"></a>
+                        </div>
+                    </section>    
+                    <section class="exclusive padding-site">
+                        <div class="excl-img1">
+                            <h2 class="pr-h2">exclusive</h2>
+                            <h3 class="pr-h3">Fishnet Chair</h3>
+                            <p class="pr-text">Seat and back with upholstery made of&nbsp;cold cure foam. Steel frame, available in&nbsp;matt</p>
+                            <a href="#" class="button">Order&nbsp;Us</a>
+                        </div>
+                        <div class="excl-box">
+                            <a href="#" class="excl-img-link"><img src="{% static 'img/exclusive-2.jpg' %}" alt="Product" class="excl-img"></a>
+                            <a href="#" class="excl-img-link"><img src="{% static 'img/exclusive-3.jpg' %}" alt="Product" class="excl-img"></a>
+                            <a href="#" class="excl-img-link"><img src="{% static 'img/exclusive-4.jpg' %}" alt="Product" class="excl-img"></a>
+                            <a href="#" class="excl-img-link"><img src="{% static 'img/exclusive-5.jpg' %}" alt="Product" class="excl-img"></a>
+                        </div>
+                    </section>
+                    <section class="mobile padding-site">
+                        <h2 class="mob-h2">mobile app</h2>
+                        <h3 class="mob-h3">Find. Follow. Favorite.</h3>
+                        <p class="mod-text">Save your favorites and share your style.</p>
+                        <div class="mob-shops">
+                            <a href="#" class="mob-img-link"><img src="{% static 'img/app-store.jpg' %}" alt="Store" class="mob-img"></a>
+                            <a href="#" class="mob-img-link"><img src="{% static 'img/google-play.jpg' %}" alt="Store" class="mob-img"></a>
+                        </div>    
+                    </section>
+                </main>
+            </div>
+{% endblock %}

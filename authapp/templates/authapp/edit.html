@@ -1,0 +1,16 @@
+{% extends 'authapp/base.html' %}
+{% load staticfiles %}
+{% load my_tags %}
+
+{% block content %}
+    <form class="form-horizontal" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ edit_form.as_p }}
+        {{ profile_form.as_p }}
+        <input class="form-control" type="submit" value="сохранить">
+    </form>
+    <a href="{% url 'main:index' %}" class="btn btn-round form-control last">
+        на главную
+    </a>
+    <div class="user_avatar"><img src="{{ user.avatar|media_folder_users }}"></div>
+{% endblock %}
